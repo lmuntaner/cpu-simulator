@@ -1,0 +1,11 @@
+.lightbulb {
+  width: 1rem;
+  height: 1rem;
+  background-color: grey;
+
+  display: inline-block;
+}
+
+.lightbulb.on {
+  background-color: yellow;
+}

@@ -1,0 +1,25 @@
+{
+  "name": "cpu-simulator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "serve",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lmuntaner/cpu-simulator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lmuntaner/cpu-simulator/issues"
+  },
+  "homepage": "https://github.com/lmuntaner/cpu-simulator#readme",
+  "devDependencies": {
+    "jest": "^29.3.1",
+    "serve": "^14.1.2"
+  }
+}
