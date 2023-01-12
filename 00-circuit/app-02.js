@@ -1,3 +1,5 @@
+import { LightbulbUI, SourceUI, ElectricNode } from "./circuit.js";
+
 const lightbulb1 = new LightbulbUI();
 const lightbulb2 = new LightbulbUI();
 const node = new ElectricNode([lightbulb1, lightbulb2]);

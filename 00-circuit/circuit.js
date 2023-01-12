@@ -119,6 +119,4 @@ class SwitchUI extends Switch {
   }
 }
 
-if (typeof module !== "undefined" && module.exports) {
-  module.exports = { Source, Lightbulb, ElectricNode, Switch };
-}
+module.exports = { Source, Lightbulb, ElectricNode, Switch, LightbulbUI, SourceUI, SwitchUI };
