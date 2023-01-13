@@ -1,4 +1,5 @@
-const { Source, Lightbulb, ElectricNode, Switch } = require("./circuit");
+import { Source, Lightbulb, ElectricNode, Switch } from "./circuit";
+import {jest} from '@jest/globals';
 
 describe("Source", () => {
   beforeEach(() => {

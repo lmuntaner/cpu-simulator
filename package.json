@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "serve": "serve",
-    "build": "rollup -c rollup.config.js",
-    "dev": "rollup -c rollup.config.js --watch",
-    "test": "jest"
+    "build": "rollup -c rollup.config.js --bundleConfigAsCjs",
+    "dev": "rollup -c rollup.config.js --watch --bundleConfigAsCjs",
+    "test": "NODE_OPTIONS='--experimental-vm-modules' jest"
   },
   "repository": {
     "type": "git",

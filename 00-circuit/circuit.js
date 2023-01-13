@@ -1,4 +1,4 @@
-class Source {
+export class Source {
   static ELECTRICAL_INTERVAL_MILLIS = 1000;
 
   constructor(output) {
@@ -25,7 +25,7 @@ class Source {
   }
 }
 
-class Lightbulb {
+export class Lightbulb {
   constructor() {
     this.signal = 0;
   }
@@ -35,7 +35,7 @@ class Lightbulb {
   }
 }
 
-class ElectricNode {
+export class ElectricNode {
   constructor(outputs) {
     this.signal = 0;
     this.outputs = outputs
@@ -47,7 +47,7 @@ class ElectricNode {
   }
 }
 
-class Switch {
+export class Switch {
   constructor(output) {
     this.output = output;
     this.signal = 0;
@@ -73,7 +73,7 @@ class Switch {
 }
 
 // Used for UI purposes
-class SourceUI extends Source {
+export class SourceUI extends Source {
   setListener(selector) {
     this.element = document.querySelector(selector);
     this.element.addEventListener("click", (event) => {
@@ -88,7 +88,7 @@ class SourceUI extends Source {
   }
 }
 
-class LightbulbUI extends Lightbulb {
+export class LightbulbUI extends Lightbulb {
   setSignal(signal) {
     this.signal = signal;
     if (this.element) {
@@ -105,7 +105,7 @@ class LightbulbUI extends Lightbulb {
   }
 }
 
-class SwitchUI extends Switch {
+export class SwitchUI extends Switch {
   setListener(selector) {
     this.element = document.querySelector(selector);
     this.element.addEventListener("click", (event) => {
@@ -118,5 +118,3 @@ class SwitchUI extends Switch {
     });
   }
 }
-
-module.exports = { Source, Lightbulb, ElectricNode, Switch, LightbulbUI, SourceUI, SwitchUI };

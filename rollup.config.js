@@ -1,29 +1,21 @@
-const commonjs = require('@rollup/plugin-commonjs');
-const nodeResolve = require('@rollup/plugin-node-resolve');
+import commonjs from '@rollup/plugin-commonjs';
+import nodeResolve from '@rollup/plugin-node-resolve';
 
 module.exports = [
   {
-    input: "./00-circuit/app-01.js",
+    input: "./00-circuit/app.js",
     output: {
-      file: "./00-circuit/public/bundle-01.js",
+      file: "./00-circuit/public/bundle.js",
       format: "iife"
     },
     plugins: [commonjs(), nodeResolve()]
   },
   {
-    input: "./00-circuit/app-02.js",
+    input: "./01-logic_gates/app.js",
     output: {
-      file: "./00-circuit/public/bundle-02.js",
+      file: "./01-logic_gates/public/bundle.js",
       format: "iife"
     },
     plugins: [commonjs(), nodeResolve()]
   },
-  {
-    input: "./00-circuit/app-03.js",
-    output: {
-      file: "./00-circuit/public/bundle-03.js",
-      format: "iife"
-    },
-    plugins: [commonjs(), nodeResolve()]
-  }
 ]
