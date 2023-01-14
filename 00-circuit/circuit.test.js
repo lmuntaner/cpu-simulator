@@ -1,10 +1,10 @@
 import { Source, Lightbulb, ElectricNode, Switch } from "./circuit";
-import {jest} from '@jest/globals';
+import { jest } from "@jest/globals";
 
 describe("Source", () => {
   beforeEach(() => {
     jest.useFakeTimers();
-    jest.spyOn(global, 'setInterval');
+    jest.spyOn(global, "setInterval");
   });
   it("should light up the lightbulb and not change with time", () => {
     const lightbulb = new Lightbulb();
@@ -24,7 +24,7 @@ describe("Source", () => {
   describe("ElectricNode", () => {
     beforeEach(() => {
       jest.useFakeTimers();
-      jest.spyOn(global, 'setInterval');
+      jest.spyOn(global, "setInterval");
     });
     it("should forward signal to multiple outputs", () => {
       const lightbulb1 = new Lightbulb();
@@ -45,7 +45,7 @@ describe("Source", () => {
   describe("Switch", () => {
     beforeEach(() => {
       jest.useFakeTimers();
-      jest.spyOn(global, 'setInterval');
+      jest.spyOn(global, "setInterval");
     });
 
     it("should open and close lightbulb", () => {
@@ -65,7 +65,7 @@ describe("Source", () => {
       expect(lightbulb.signal).toBe(1);
       jest.advanceTimersByTime(Source.ELECTRICAL_INTERVAL_MILLIS);
       expect(lightbulb.signal).toBe(1);
-      
+
       switchNode.close();
       jest.advanceTimersByTime(Source.ELECTRICAL_INTERVAL_MILLIS);
 
@@ -73,5 +73,5 @@ describe("Source", () => {
 
       source.stop();
     });
-  })
+  });
 });

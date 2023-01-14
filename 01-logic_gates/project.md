@@ -65,9 +65,3 @@ Set input of 8, returns 1 or 0.
 ### Multi-Way/Multi-Bit Demultiplexor
 
 1 input, 4 or 8 outputs.
-
-
-
-
-
-

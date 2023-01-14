@@ -78,6 +78,6 @@ describe("Logic Gates", () => {
       expect(lightbulb.signal).toBe(1);
       not.input.setSignal(1);
       expect(lightbulb.signal).toBe(0);
-    })
-  })
+    });
+  });
 });

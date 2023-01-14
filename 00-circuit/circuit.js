@@ -38,12 +38,12 @@ export class Lightbulb {
 export class ElectricNode {
   constructor(outputs) {
     this.signal = 0;
-    this.outputs = outputs
+    this.outputs = outputs;
   }
 
   setSignal(signal) {
     this.signal = signal;
-    this.outputs.forEach(output => output.setSignal(signal));
+    this.outputs.forEach((output) => output.setSignal(signal));
   }
 }
 

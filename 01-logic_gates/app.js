@@ -1,4 +1,9 @@
-import { ElectricNode, LightbulbUI, SourceUI, SwitchUI } from "../00-circuit/circuit.js";
+import {
+  ElectricNode,
+  LightbulbUI,
+  SourceUI,
+  SwitchUI,
+} from "../00-circuit/circuit.js";
 import { Nand } from "./logic-gates";
 
 const lightbulb1 = new LightbulbUI();
@@ -13,4 +18,3 @@ switch1.setListener("#switch-1-1");
 switch2.setListener("#switch-1-2");
 source.setListener("#start-1");
 lightbulb1.addElement("#lightbulb-1");
-

@@ -39,5 +39,3 @@ Build a circuit with two lightbulbs. One should always be on, the other controll
 ### HTML Representation
 
 <!-- Mockup -->
-
-

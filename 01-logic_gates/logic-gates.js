@@ -52,6 +52,9 @@ export class Not {
   constructor(output) {
     this.output = output;
     this.internalNand = new Nand(this.output);
-    this.input = new ElectricNode([this.internalNand.inputA, this.internalNand.inputB]);
+    this.input = new ElectricNode([
+      this.internalNand.inputA,
+      this.internalNand.inputB,
+    ]);
   }
 }
