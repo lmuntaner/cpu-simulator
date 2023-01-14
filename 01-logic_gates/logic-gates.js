@@ -50,11 +50,36 @@ export class Nand {
 
 export class Not {
   constructor(output) {
-    this.output = output;
-    this.internalNand = new Nand(this.output);
-    this.input = new ElectricNode([
-      this.internalNand.inputA,
-      this.internalNand.inputB,
-    ]);
+    const internalNand = new Nand(output);
+    this.input = new ElectricNode([internalNand.inputA, internalNand.inputB]);
+  }
+}
+
+export class And {
+  constructor(output) {
+    const internalNot = new Not(output);
+    const internalNand = new Nand(internalNot.input);
+    this.inputA = internalNand.inputA;
+    this.inputB = internalNand.inputB;
+  }
+}
+
+export class Or {
+  constructor(output) {
+    const nand = new Nand(output);
+    const notA = new Not(nand.inputA);
+    const notB = new Not(nand.inputB);
+    this.inputA = notA.input;
+    this.inputB = notB.input;
+  }
+}
+
+export class Xor {
+  constructor(output) {
+    const and = new And(output);
+    const nand = new Nand(and.inputA);
+    const or = new Or(and.inputB);
+    this.inputA = new ElectricNode([nand.inputA, or.inputA]);
+    this.inputB = new ElectricNode([nand.inputB, or.inputB]);
   }
 }

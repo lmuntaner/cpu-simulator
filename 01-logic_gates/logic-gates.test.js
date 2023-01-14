@@ -1,5 +1,5 @@
 import { Lightbulb, Switch, ElectricNode } from "../00-circuit/circuit";
-import { Nand, Not } from "./logic-gates";
+import { And, Nand, Not, Or, Xor } from "./logic-gates";
 
 describe("Logic Gates", () => {
   describe("Nand Gate", () => {
@@ -78,6 +78,57 @@ describe("Logic Gates", () => {
       expect(lightbulb.signal).toBe(1);
       not.input.setSignal(1);
       expect(lightbulb.signal).toBe(0);
+    });
+  });
+
+  describe("And Gate", () => {
+    it("should only send signal when both are ON", () => {
+      const lightbulb = new Lightbulb();
+      const and = new And(lightbulb);
+      and.inputA.setSignal(1);
+      and.inputB.setSignal(1);
+      expect(lightbulb.signal).toBe(1);
+      and.inputA.setSignal(0);
+      and.inputB.setSignal(0);
+      expect(lightbulb.signal).toBe(0);
+      and.inputA.setSignal(0);
+      and.inputB.setSignal(1);
+      expect(lightbulb.signal).toBe(0);
+    });
+  });
+
+  describe("Or Gate", () => {
+    it("should only send signal when one or both inputs are ON", () => {
+      const lightbulb = new Lightbulb();
+      const or = new Or(lightbulb);
+      or.inputA.setSignal(1);
+      or.inputB.setSignal(1);
+      expect(lightbulb.signal).toBe(1);
+      or.inputA.setSignal(0);
+      or.inputB.setSignal(0);
+      expect(lightbulb.signal).toBe(0);
+      or.inputA.setSignal(0);
+      or.inputB.setSignal(1);
+      expect(lightbulb.signal).toBe(1);
+    });
+  });
+
+  describe("Xor Gate", () => {
+    it("should only send signal when one or both inputs are ON", () => {
+      const lightbulb = new Lightbulb();
+      const xor = new Xor(lightbulb);
+      xor.inputA.setSignal(1);
+      xor.inputB.setSignal(1);
+      expect(lightbulb.signal).toBe(0);
+      xor.inputA.setSignal(0);
+      xor.inputB.setSignal(0);
+      expect(lightbulb.signal).toBe(0);
+      xor.inputA.setSignal(0);
+      xor.inputB.setSignal(1);
+      expect(lightbulb.signal).toBe(1);
+      xor.inputA.setSignal(1);
+      xor.inputB.setSignal(0);
+      expect(lightbulb.signal).toBe(1);
     });
   });
 });
